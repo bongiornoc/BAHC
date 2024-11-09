@@ -7,7 +7,7 @@ if sys.version_info < (3, 10):
 
 setup(
     name='bahc',
-    version='2.0.0',
+    version='2.0.2',
     description='Bootstrap Average Hierarchical Clustering for filtering covariance matrices',
     author='Christian Bongiorno',
     author_email='christian.bongiorno@centralesupelec.fr',

@@ -35,9 +35,9 @@ class BAHC:
         self.regularization_methods = {'no-neg': self.remove_negative_eigenvalues, 'near': cov_nearest}
         self.N, self.T = data.shape
         self.std_devs = data.std(axis=1)
-        self.filtered_matrix = self.filter_matrix()
+        return self.filter_matrix()
 
-    def filter_matrix(self, R):
+    def hierarchical_cleaning(self, R):
         """
         Filters the input matrix using hierarchical clustering.
 
@@ -124,7 +124,7 @@ class BAHC:
         Cf = np.identity(C.shape[0])
         for i in range(max(K)):
             res = C - Cf
-            res = self.filter_matrix(1 - res)
+            res = self.hierarchical_cleaning(res)
             np.fill_diagonal(res, 0)
             Cf += res
             if i + 1 in K:
