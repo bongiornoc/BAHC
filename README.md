@@ -3,6 +3,7 @@
 BAHC (Bootstrap Aggregated Hierarchical Clustering) is a Python package for filtering covariance matrices using hierarchical clustering and bootstrap aggregation.
 
 ## Installation
+
 To install the package, you can use pip:
 
 ```sh
